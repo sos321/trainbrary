@@ -1,0 +1,22 @@
+{
+  "name": "trainbrary",
+  "version": "1.0.0",
+  "description": "Store all your trainings in one place.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [
+    "training",
+    "organize"
+  ],
+  "author": "Filip",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "parcel": "^2.7.0"
+  }
+}
