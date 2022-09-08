@@ -1,0 +1,73 @@
+// *** Colors ***
+// Text Colors
+$main-text-color: #2c3e50;
+$light-text-color: #BDC3C7;
+$extra-light-text-color: #95A5A6;
+
+$success-text-color: #27AE60;
+$fail-text-color: #E74C3C;
+
+// Highlight Colors
+$highlight-color: #ecf0f1;
+
+// Training Colors
+$run-color: #F39C12;
+$walk-color: #e74c3c;
+$cycle-color: #1ABC9C;
+$swim-color: #9B59B6;
+$other-color: #2C3E50;
+
+// Button Colors
+$training-graph-button-color: #FFFFFF2B;
+$button-background-color: #fff;
+
+// Gradients
+$main-menu-gradient: linear-gradient(180deg, #FFFFFF 0%, #ECF0F1 40%);
+$run-menu-gradient: linear-gradient(180deg, #F39C12 0%, #E67E22 100%);
+$walk-menu-gradient: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+$cycle-menu-gradient: linear-gradient(180deg, #1abc9c 0%, #16a085 100%);
+$swim-menu-gradient: linear-gradient(180deg, #9b59b6 0%, #8e44ad 100%);
+$other-menu-gradient: linear-gradient(180deg, #34495E80 0%, #2C3E5080 100%);
+
+// Box Shadows
+$main-shadow: 4px 4px 7px 1px rgba(0, 0, 0, 0.2);
+
+// *** Fonts ***
+// Weights
+$normal-weight: 400;
+$bold-weight: 700;
+
+// Sizes
+$text-xxl: 4rem;
+$text-xl: 2.4rem;
+$text-lg: 2rem;
+$text-md: 1.7rem;
+$text-sm: 1.5rem;
+
+// *** Other ***
+// Border Radius
+$main-radius: 11px;
+$status-radius: 22px;
+
+// Widths
+$small-button-size-width: 6rem;
+$standard-button-size-width: 7.8rem;
+$long-button-size-width: 21rem;
+$manipulation-button-size-width: 15rem;
+
+$popup-size-width: 59rem;
+$status-size-width: 28rem;
+
+// Breakpoints
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+
