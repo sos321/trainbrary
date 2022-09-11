@@ -1,0 +1,165 @@
+.multiselect-wrapper {
+  min-width: $long-button-size-width;
+
+  display: inline-block;
+
+  white-space: nowrap;
+
+  font-size: $text-md;
+  font-family: inherit;
+
+  margin: 5rem 5rem;
+
+  .multiselect-input {
+    max-width: $long-button-size-width;
+
+    padding: 1rem calc(2.5rem + 1.5rem) 1rem 2.5rem;
+
+    border-radius: $main-radius;
+
+    border: none;
+
+    box-shadow: $main-shadow;
+
+    font-size: $text-md;
+
+    cursor: pointer;
+
+    &::placeholder {
+      color: $main-text-color;
+      font-weight: $bold-weight;
+    }
+  }
+
+  .multiselect-input-div {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 55%;
+      right: 1.5rem;
+
+      width: 20px;
+      height: 20px;
+
+      pointer-events: none;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .multiselect-wrapper {
+      label {
+        display: block;
+        font-size: $text-md;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.multiselect-wrapper {
+  .multiselect-list {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    background-color: white;
+    margin-top: 2.8rem;
+    padding: 1rem;
+    width: $long-button-size-width;
+    &.active {
+      display: block;
+      border-radius: $main-radius;
+      box-shadow: $main-shadow;
+    }
+    .multiselect-checkbox {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+    }
+    li {
+      label {
+        input {
+          &:checked {
+            & ~ .icon[name='checkmark-outline'] {
+              visibility: visible;
+            }
+            & ~ .icon[name='radio-button-on-outline'] {
+              visibility: hidden;
+            }
+          }
+          &:not(:checked) {
+            & ~ .icon[name='radio-button-on-outline'] {
+              visibility: visible;
+            }
+            & ~ .icon[name='checkmark-outline'] {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    display: block;
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+.multiselect-wrapper .multiselect-list > span,
+.multiselect-wrapper .multiselect-list li {
+  width: 100%;
+  height: 3rem;
+  display: flex !important;
+  align-items: center;
+  border-radius: $main-radius;
+  color: $main-text-color;
+}
+.multiselect-text {
+  font-size: $text-md;
+  font-weight: $normal-weight;
+}
+.multiselect-wrapper .multiselect-list > span label,
+.multiselect-wrapper .multiselect-list li label {
+  width: 100%;
+  cursor: pointer;
+  padding: 0px 15px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.multiselect-wrapper ul li:hover,
+.multiselect-wrapper .multiselect-list > span:hover {
+  background-color: $light-gray-color;
+}
+.multiselect-input-div {
+  height: 34px;
+  input {
+    border: 1px solid #ababab;
+    background: #fff;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    vertical-align: middle;
+  }
+}
+.multiselect-count {
+  visibility: hidden !important;
+}
+.multiselect-dropdown-arrow {
+  visibility: hidden;
+}
