@@ -1,33 +1,35 @@
 // *** Colors ***
 // Text Colors
 $main-text-color: #2c3e50;
-$light-text-color: #BDC3C7;
-$extra-light-text-color: #95A5A6;
+$light-text-color: #bdc3c7;
+$extra-light-text-color: #95a5a6;
 
-$success-text-color: #27AE60;
-$fail-text-color: #E74C3C;
+$light-gray-color: #ecf0f1;
+
+$success-text-color: #27ae60;
+$fail-text-color: #e74c3c;
 
 // Highlight Colors
 $highlight-color: #ecf0f1;
 
 // Training Colors
-$run-color: #F39C12;
+$run-color: #f39c12;
 $walk-color: #e74c3c;
-$cycle-color: #1ABC9C;
-$swim-color: #9B59B6;
-$other-color: #2C3E50;
+$cycle-color: #1abc9c;
+$swim-color: #9b59b6;
+$other-color: #2c3e50;
 
 // Button Colors
-$training-graph-button-color: #FFFFFF2B;
+$training-graph-button-color: #ffffff2b;
 $button-background-color: #fff;
 
 // Gradients
-$main-menu-gradient: linear-gradient(180deg, #FFFFFF 0%, #ECF0F1 40%);
-$run-menu-gradient: linear-gradient(180deg, #F39C12 0%, #E67E22 100%);
+$main-menu-gradient: linear-gradient(180deg, #ffffff 0%, #ecf0f1 40%);
+$run-menu-gradient: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
 $walk-menu-gradient: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
 $cycle-menu-gradient: linear-gradient(180deg, #1abc9c 0%, #16a085 100%);
 $swim-menu-gradient: linear-gradient(180deg, #9b59b6 0%, #8e44ad 100%);
-$other-menu-gradient: linear-gradient(180deg, #34495E80 0%, #2C3E5080 100%);
+$other-menu-gradient: linear-gradient(180deg, #34495e80 0%, #2c3e5080 100%);
 
 // Box Shadows
 $main-shadow: 4px 4px 7px 1px rgba(0, 0, 0, 0.2);
@@ -60,14 +62,12 @@ $status-size-width: 28rem;
 
 // Breakpoints
 $breakpoints: (
-    "phone":        400px,
-    "phone-wide":   480px,
-    "phablet":      560px,
-    "tablet-small": 640px,
-    "tablet":       768px,
-    "tablet-wide":  1024px,
-    "desktop":      1248px,
-    "desktop-wide": 1440px
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px,
 );
-
-
