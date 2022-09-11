@@ -80,6 +80,15 @@
       height: 0;
       width: 0;
     }
+    .icon-training {
+      width: 30px;
+      height: 28px;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-8%, -45%);
+    }
     .icon {
       position: absolute;
       top: 0;
@@ -87,6 +96,15 @@
       width: 20px;
       height: 20px;
       margin-right: 15px;
+      color: $main-text-color;
+
+      &[name='ellipse'] {
+        width: 6px;
+        height: 6px;
+
+        top: 7px;
+        right: 7px;
+      }
     }
     li {
       label {
@@ -95,12 +113,12 @@
             & ~ .icon[name='checkmark-outline'] {
               visibility: visible;
             }
-            & ~ .icon[name='radio-button-on-outline'] {
+            & ~ .icon[name='ellipse'] {
               visibility: hidden;
             }
           }
           &:not(:checked) {
-            & ~ .icon[name='radio-button-on-outline'] {
+            & ~ .icon[name='ellipse'] {
               visibility: visible;
             }
             & ~ .icon[name='checkmark-outline'] {
@@ -137,7 +155,7 @@
 .multiselect-wrapper .multiselect-list li label {
   width: 100%;
   cursor: pointer;
-  padding: 0px 15px;
+  padding: 0px 25px;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
