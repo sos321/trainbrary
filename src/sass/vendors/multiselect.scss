@@ -8,8 +8,6 @@
   font-size: $text-md;
   font-family: inherit;
 
-  margin: 5rem 5rem;
-
   .multiselect-input {
     max-width: $long-button-size-width;
 
@@ -36,11 +34,11 @@
 
     .icon {
       position: absolute;
-      top: 55%;
+      top: 30%;
       right: 1.5rem;
 
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
 
       pointer-events: none;
     }
@@ -53,7 +51,7 @@
       label {
         display: block;
         font-size: $text-md;
-        font-weight: 600;
+        font-weight: $bold-weight;
       }
     }
   }
@@ -65,7 +63,7 @@
     position: absolute;
     display: none;
     background-color: white;
-    margin-top: 2.8rem;
+    margin-top: 1.5rem;
     padding: 1rem;
     width: $long-button-size-width;
     &.active {
@@ -81,8 +79,8 @@
       width: 0;
     }
     .icon-training {
-      width: 30px;
-      height: 28px;
+      width: 3rem;
+      height: 2.8rem;
 
       position: absolute;
       top: 50%;
@@ -93,17 +91,17 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 20px;
-      height: 20px;
-      margin-right: 15px;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1.5rem;
       color: $main-text-color;
 
       &[name='ellipse'] {
-        width: 6px;
-        height: 6px;
+        width: 0.6rem;
+        height: 0.6rem;
 
-        top: 7px;
-        right: 7px;
+        top: 0.7rem;
+        right: 0.7rem;
       }
     }
     li {
@@ -133,7 +131,7 @@
     list-style: none;
     display: block;
     position: relative;
-    max-height: 200px;
+    max-height: 20rem;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -155,22 +153,23 @@
 .multiselect-wrapper .multiselect-list li label {
   width: 100%;
   cursor: pointer;
-  padding: 0px 25px;
+  padding: 0 1rem;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+.multiselect-wrapper .multiselect-list li label {
+  padding: 0 2.5rem;
 }
 .multiselect-wrapper ul li:hover,
 .multiselect-wrapper .multiselect-list > span:hover {
   background-color: $light-gray-color;
 }
 .multiselect-input-div {
-  height: 34px;
   input {
     border: 1px solid #ababab;
     background: #fff;
-    margin: 5px 0 6px 0;
     padding: 5px;
     vertical-align: middle;
   }

@@ -17,5 +17,45 @@
 
     <title>Trainbrary</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Map Element -->
+    <div id="map"></div>
+
+    <div class="top-row">
+      <!-- Buttons -->
+      <div class="top-row-btns">
+        <button class="btn" id="upload">
+          <ion-icon name="menu-sharp" class="btn-icon" size="large"></ion-icon>
+        </button>
+        <button class="btn" id="menu">
+          <ion-icon name="add" class="btn-icon" size="large"></ion-icon>
+        </button>
+      </div>
+
+      <div class="top-row-filters">
+        <!-- Multiselect Component -->
+        <select name="training-type" id="training-type" multiple>
+          <option value="cycling">Cycling</option>
+          <option value="running">Running</option>
+          <option value="swimming">Swimming</option>
+          <option value="walking">Walking</option>
+          <option value="other">Other</option>
+        </select>
+
+        <!-- Search Component -->
+        <div class="search-container">
+          <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="Search a place"
+          />
+          <ion-icon name="search-sharp" class="search-icon"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="js/vendors/multiselect.min.js"></script>
+  </body>
 </html>

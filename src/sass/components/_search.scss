@@ -1,0 +1,33 @@
+.search-container {
+  position: relative;
+
+  #search {
+    width: $long-button-size-width * 2;
+    height: $small-button-size-width;
+
+    border-radius: $main-radius;
+
+    box-shadow: $main-shadow;
+
+    padding: 2rem;
+
+    font-size: $text-md;
+
+    &::placeholder {
+      color: $main-text-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 20%;
+    right: 3%;
+
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

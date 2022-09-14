@@ -1,0 +1,13 @@
+.top-row {
+  @include flex(row, space-between, 0);
+
+  margin: 3rem 4rem 0 4rem;
+
+  &-btns {
+    @include flex(row, center, 2rem);
+  }
+
+  &-filters {
+    @include flex(row, center, 2rem);
+  }
+}

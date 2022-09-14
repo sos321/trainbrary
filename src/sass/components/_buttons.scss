@@ -1,0 +1,41 @@
+.btn {
+  border: none;
+
+  position: relative;
+
+  @include flex(row, space-between, 6.4rem);
+
+  background-color: $button-background-color;
+
+  box-shadow: $main-shadow;
+
+  border-radius: $main-radius;
+
+  padding: 1rem 2.5rem;
+
+  width: $small-button-size-width;
+  height: $small-button-size-width;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
+  &-icon {
+    @include center;
+
+    color: $main-text-color;
+
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &-text {
+    font-size: $text-md;
+  }
+}
