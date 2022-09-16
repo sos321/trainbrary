@@ -13,8 +13,8 @@
 
   padding: 1rem 2.5rem;
 
-  width: $small-button-size-width;
-  height: $small-button-size-width;
+  width: $standard-button-size-width;
+  height: $standard-button-size-width;
 
   font-family: inherit;
 
@@ -37,5 +37,11 @@
 
   &-text {
     font-size: $text-md;
+  }
+
+  &-small {
+    @extend .btn;
+    max-width: $small-button-size-width;
+    max-height: $small-button-size-width;
   }
 }

@@ -41,10 +41,16 @@
       height: 2rem;
 
       pointer-events: none;
+
+      color: $main-text-color;
     }
 
-    input:focus {
-      outline: none;
+    input {
+      color: $main-text-color;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .multiselect-wrapper {
@@ -139,7 +145,7 @@
 .multiselect-wrapper .multiselect-list > span,
 .multiselect-wrapper .multiselect-list li {
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   display: flex !important;
   align-items: center;
   border-radius: $main-radius;
