@@ -17,6 +17,7 @@
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "func-names": "off",
     "func-style": ["error", "declaration"],
-    "no-var": "error"
+    "no-var": "error",
+    "comma-dangle": "off"
   }
 }
