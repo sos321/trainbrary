@@ -1,0 +1,110 @@
+.menu-trainings {
+  margin: 4rem 4rem 0;
+  padding: 0.5rem 1rem 2rem 0;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  max-height: 72%;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $light-gray-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $light-text-color;
+    border-radius: $main-radius;
+
+    &:hover {
+      background: $extra-light-text-color;
+    }
+  }
+}
+
+.training {
+  background-color: #fff;
+
+  color: $main-text-color;
+
+  border-radius: $main-radius;
+
+  box-shadow: $main-shadow;
+
+  overflow: hidden;
+
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &-side-color-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 1.5rem;
+    height: 100%;
+
+    background-color: $run-color;
+  }
+
+  &-content {
+    padding: 2rem 3.5rem 1rem;
+
+    .training-title {
+      font-size: $text-lg;
+      font-weight: $normal-weight;
+
+      display: inline;
+    }
+
+    .training-icon {
+      color: inherit;
+
+      width: 1.5rem;
+      height: 1.5rem;
+
+      margin-left: 0.5rem;
+    }
+
+    .training-info-holder {
+      margin: 2rem 0;
+
+      @include flex(column, baseline, 1.5rem);
+      align-items: baseline;
+
+      .training-info {
+        @include flex(row, center, 2rem);
+
+        .name {
+          font-size: $text-sm;
+        }
+      }
+    }
+
+    .training-detail-holder {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+
+      text-align: end;
+
+      @include flex(column, center, 0.8rem);
+      align-items: flex-end;
+
+      font-size: $text-sm;
+    }
+  }
+}
