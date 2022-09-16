@@ -6,6 +6,8 @@
 @import 'base/_typography.scss';
 @import 'base/_reset.scss';
 @import 'components/_search.scss';
+@import 'layout/_controls.scss';
+@import 'layout/_logos.scss';
 
 @import 'layout/top-row';
-@import 'vendors/multiselect.scss';
+@import 'vendors/_multiselect.scss';
