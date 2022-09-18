@@ -18,7 +18,7 @@
 
   cursor: pointer;
 
-  transition: all 300ms ease-in;
+  transition: transform 300ms ease-in;
 
   &:not(.transitioning):hover {
     transform: scale(0.95);
@@ -44,6 +44,6 @@
   }
 }
 
-#upload.move {
+#open-upload.move {
   transform: translateX(800%);
 }

@@ -1,0 +1,142 @@
+.add-file {
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 300ms ease-in;
+
+  width: 50vw;
+  height: 60vh;
+
+  @include center();
+
+  background-color: #fff;
+
+  border-radius: $main-radius;
+
+  box-shadow: $main-shadow;
+
+  color: $main-text-color;
+
+  padding: 4rem;
+
+  &::after {
+    @include pseudo();
+    @include center();
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: transparent;
+
+    z-index: -1;
+  }
+
+  &-top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    margin-top: -0.5rem;
+  }
+
+  &-title {
+    font-size: $text-xl;
+  }
+
+  &-drop-container {
+    text-align: center;
+
+    margin-top: 4rem;
+    padding: 5rem;
+
+    border-radius: $main-radius;
+    border: dotted $light-text-color 2px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+
+    &-icon {
+      width: 10rem;
+      height: 10rem;
+
+      color: $light-text-color;
+    }
+
+    &-title {
+      font-size: $text-md;
+      color: $light-text-color;
+      font-weight: $normal-weight;
+
+      margin-top: 2rem;
+    }
+
+    &-description {
+      font-size: $text-md - 0.2rem;
+      color: $light-text-color;
+      font-weight: $normal-weight;
+
+      margin-top: 1rem;
+      margin-bottom: 14rem;
+    }
+
+    &-input {
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+
+      color: transparent;
+
+      user-select: none;
+
+      &::file-selector-button {
+        visibility: hidden;
+      }
+
+      &::before {
+        @include pseudo(block, absolute, 'Select Files');
+        bottom: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background-color: $light-text-color;
+
+        border: none;
+        border-radius: $main-radius;
+
+        box-shadow: $main-shadow;
+
+        color: $main-text-color;
+        font-size: $text-md;
+
+        text-align: center;
+
+        transition: transform 300ms ease-in-out;
+
+        padding: 1rem 0;
+
+        width: $long-button-size-width;
+
+        cursor: pointer;
+      }
+
+      &:hover::before {
+        transform: scale(1.02) translateX(-50%);
+      }
+    }
+  }
+}
+
+.add-file.active {
+  opacity: 1;
+  visibility: visible;
+}
