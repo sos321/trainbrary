@@ -1,7 +1,7 @@
 .search-container {
   position: relative;
 
-  #search {
+  .search {
     width: $long-button-size-width * 2;
     height: $small-button-size-width;
 
@@ -26,6 +26,8 @@
     position: absolute;
     top: 20%;
     right: 3%;
+
+    color: $main-text-color;
 
     width: 2.5rem;
     height: 2.5rem;

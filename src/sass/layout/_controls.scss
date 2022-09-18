@@ -1,5 +1,5 @@
 .controls {
-  @include flex(column, center, 2rem);
+  @include flex(column, center, 1.5rem);
 
   position: absolute;
   bottom: 0;
