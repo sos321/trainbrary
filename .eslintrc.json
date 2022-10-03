@@ -18,6 +18,7 @@
     "func-names": "off",
     "func-style": ["error", "declaration"],
     "no-var": "error",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "operator-linebreak": "off"
   }
 }
