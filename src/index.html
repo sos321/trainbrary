@@ -89,7 +89,7 @@
     </div>
 
     <!-- Menu Component -->
-    <div class="menu" id="menu">
+    <main class="menu" id="menu">
       <img src="/src/img/logo.png" alt="Trainbrary logo" class="logo-small" />
       <button class="btn" id="close-menu">
         <ion-icon name="close-outline" class="btn-icon"></ion-icon>
@@ -122,6 +122,59 @@
               Filters
             </button>
           </div>
+        </div>
+      </div>
+      <div class="menu-training-detail">
+        <div class="back-btn-container">
+          <!-- TODO back button -->
+        </div>
+        <div class="detail-header">
+          <h2 contenteditable class="title">Run Near Vinohrady</h2>
+          <!-- TODO make contenteditable and put together with smaller titles-->
+          <!-- TODO add edit icon -->
+          <p class="date-time">08 December 2022 at 10:00</p>
+          <p class="location">In Prague, Czech Republic</p>
+        </div>
+        <div class="stats-container">
+          <h4 class="stats-title">Stats</h4>
+          <div class="stat">
+            <p class="stat-title">Distance</p>
+            <p class="stat-value">5 km</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Duration</p>
+            <p class="stat-value">42 min</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Pace</p>
+            <p class="stat-value">6:24 min/km</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Elevation</p>
+            <p class="stat-value">155 m</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Calories</p>
+            <p class="stat-value">166 kcal</p>
+          </div>
+        </div>
+        <div class="graphs-container">
+          <div class="graph-controls">
+            <div class="selection-container">
+              <!-- TODO select component -->
+            </div>
+            <button class="btn graph-btn" data-id="distance">Distance</button>
+            <button class="btn graph-btn" data-id="time">Time</button>
+          </div>
+          <!-- TODO Graph -->
+        </div>
+        <div class="edit-btns">
+          <button class="btn edit-btn" id="edit">
+            <!-- TODO add edit icon -->
+          </button>
+          <button class="btn edit-btn" id="delete">
+            <!-- TODO add delete icon -->
+          </button>
         </div>
       </div>
       <div class="menu-trainings" id="trainings-list">
@@ -240,31 +293,8 @@
             </div>
           </div>
         </div>
-        <div class="training">
-          <div class="training-side-color-panel"></div>
-          <div class="training-content">
-            <h3 class="training-title" contenteditable="true">
-              Run near Vinohrady
-            </h3>
-            <ion-icon name="pencil-outline" class="training-icon"></ion-icon>
-            <div class="training-info-holder">
-              <div class="training-info">
-                <p class="name">Distance:</p>
-                <p class="value">5 km</p>
-              </div>
-              <div class="training-info">
-                <p class="name">Duration:</p>
-                <p class="value">42 min</p>
-              </div>
-            </div>
-            <div class="training-detail-holder">
-              <p class="city">Prague</p>
-              <p class="date">08/12 2022 10:00</p>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </main>
 
     <!-- Add file popup -->
     <div class="add-file" id="add-file">
@@ -293,6 +323,27 @@
             accept=".gpx"
           />
         </div>
+      </div>
+    </div>
+
+    <div class="delete-confirmation">
+      <h5 class="delete-confirmation-title">
+        Are you sure you want to delete the training?
+      </h5>
+      <p class="delete-confirmation-warning">
+        Please rethink your decision, because you won't be able to undo this
+        action.
+      </p>
+      <div class="delete-confirmation-btn-container">
+        <button
+          class="delete-confirmation-btn cancel-btn btn"
+          id="delete-for-sure"
+        >
+          Delete
+        </button>
+        <button class="delete-confirmation-btn cancel-btn btn" id="cancel">
+          Cancel
+        </button>
       </div>
     </div>
 
