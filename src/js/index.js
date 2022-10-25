@@ -1,14 +1,7 @@
-// * Map creation
-import * as L from 'leaflet';
+import map from './map';
+import searchPlaceHandler from './placeSearch';
 
-const map = L.map('map', {
-  zoomControl: false,
-}).setView([51.505, -0.09], 13);
-
-L.tileLayer('https://{s}.tile.openstreetmap.fr/hot//{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+map.init();
 
 // * Closing and opening menu
 const btnMenuOpen = document.getElementById('open-menu');
@@ -84,3 +77,15 @@ btnUploadClose.addEventListener('click', () => {
 upload.addEventListener('click', (e) => {
   if (!e.target.closest('.add-file-content')) upload.classList.remove('active');
 });
+
+// Add zoom levels and current position habdlers
+const posBtn = document.getElementById('initial-pos');
+const zoomInBtn = document.getElementById('zoom-in');
+const zoomOutBtn = document.getElementById('zoom-out');
+
+posBtn.addEventListener('click', map.setInitialPos);
+zoomInBtn.addEventListener('click', map.zoomIn);
+zoomOutBtn.addEventListener('click', map.zoomOut);
+
+const searchPlace = document.getElementById('search-place');
+searchPlace.addEventListener('input', searchPlaceHandler);
