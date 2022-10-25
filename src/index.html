@@ -56,6 +56,16 @@
             placeholder="Search a place"
           />
           <ion-icon name="search-outline" class="search-icon"></ion-icon>
+          <div class="search-options">
+            <div class="search-option">
+              <p class="search-option-text">New York</p>
+              <span class="search-option-text-country">USA</span>
+            </div>
+            <div class="search-option disabled">
+              <p class="search-option-text">Nothing to suggest</p>
+              <span class="search-option-text-country"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,13 +73,13 @@
     <div class="bottom-row">
       <!-- Control Buttons -->
       <div class="controls">
-        <button class="btn-small">
+        <button class="btn-small" id="initial-pos">
           <ion-icon name="location-outline" class="btn-icon"></ion-icon>
         </button>
-        <button class="btn-small">
+        <button class="btn-small" id="zoom-in">
           <ion-icon name="add-circle-outline" class="btn-icon"></ion-icon>
         </button>
-        <button class="btn-small">
+        <button class="btn-small" id="zoom-out">
           <ion-icon name="remove-circle-outline" class="btn-icon"></ion-icon>
         </button>
       </div>
@@ -119,7 +129,7 @@
           <div class="training-side-color-panel"></div>
           <div class="training-content">
             <h3 class="training-title" contenteditable="true">
-              Run near Vinohrady
+              Run near Prague
             </h3>
             <ion-icon name="pencil-outline" class="training-icon"></ion-icon>
             <div class="training-info-holder">
@@ -256,6 +266,7 @@
       </div>
     </div>
 
+    <!-- Add file popup -->
     <div class="add-file" id="add-file">
       <div class="add-file-content">
         <div class="add-file-top-row">
@@ -275,7 +286,12 @@
           <p class="add-file-drop-container-description">
             Files Supported: GPX
           </p>
-          <input type="file" class="add-file-drop-container-input" multiple />
+          <input
+            type="file"
+            class="add-file-drop-container-input"
+            multiple
+            accept=".gpx"
+          />
         </div>
       </div>
     </div>

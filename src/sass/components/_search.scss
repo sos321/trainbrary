@@ -32,4 +32,42 @@
     width: 2.5rem;
     height: 2.5rem;
   }
+
+  .search-options {
+    position: absolute;
+
+    background-color: #fff;
+
+    margin-top: 1.5rem;
+    padding: 1rem;
+
+    border-radius: $main-radius;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .search-option {
+      color: $main-text-color;
+
+      border-radius: $main-radius;
+
+      padding: 1rem;
+
+      @include flex(row, start, 1rem);
+
+      cursor: pointer;
+
+      &:not(.disabled):hover {
+        background-color: $light-gray-color;
+      }
+
+      &-text-country {
+        color: $extra-light-text-color;
+        font-size: $text-sm;
+      }
+    }
+  }
 }
