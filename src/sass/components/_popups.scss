@@ -1,0 +1,73 @@
+// Delete prompt
+// TODO add animation
+// TODO finish
+
+.delete-confirmation {
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60rem;
+
+  background-color: #fff;
+
+  text-align: center;
+
+  padding: 3rem;
+
+  border-radius: $main-radius;
+
+  box-shadow: $main-shadow;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-title {
+    font-size: $text-xl;
+    font-weight: $normal-weight;
+    color: $main-text-color;
+
+    margin-bottom: 2rem;
+  }
+
+  &-warning {
+    color: $light-text-color;
+    font-size: $text-xs;
+    font-weight: $normal-weight;
+
+    width: 80%;
+    margin: auto;
+
+    margin-bottom: 2.5rem;
+  }
+
+  &-btn-container {
+    @include flex(row, space-between, 0);
+
+    .delete-confirmation-btn {
+      padding: 1rem 6rem;
+      height: auto;
+
+      @include flex();
+
+      text-align: center;
+      font-size: $text-sm;
+    }
+
+    .cancel-btn {
+      background-color: $button-highlight-background-color;
+    }
+
+    .delete-btn {
+      color: $fail-text-color;
+      font-weight: $bold-weight;
+      letter-spacing: 0.2px;
+    }
+  }
+}
