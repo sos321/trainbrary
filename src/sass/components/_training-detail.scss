@@ -1,0 +1,96 @@
+// TODO finish training detail
+.menu-training-detail {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+
+  background: $run-menu-gradient;
+  box-shadow: $main-shadow;
+
+  border-radius: $main-radius;
+
+  padding: 5rem;
+
+  width: 90%;
+  height: 90%;
+
+  color: $main-text-color;
+
+  .btn-back {
+    position: absolute;
+    left: -2%;
+    top: -2%;
+
+    width: 5rem;
+    height: 5rem;
+
+    .icon-back {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .detail-header {
+    @include flex(column, start, 0);
+    align-items: baseline;
+
+    margin-bottom: 3rem;
+
+    &-title {
+      @include flex(row, start, 1rem);
+
+      margin-bottom: 1.5rem;
+
+      .title {
+        font-size: $text-xxxl;
+      }
+
+      .training-icon {
+        color: inherit;
+      }
+    }
+
+    .date-time,
+    .location {
+      font-size: $text-sm;
+
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .stats-container {
+    @include flex(column, center, 1rem);
+    align-items: flex-start;
+
+    .stats-title {
+      font-size: $text-sm;
+      text-transform: uppercase;
+
+      margin-bottom: 1rem;
+
+      position: relative;
+
+      &::after {
+        @include pseudo(block);
+        bottom: -8px;
+        left: 0;
+
+        width: 400%;
+        height: 1px;
+
+        border-radius: $main-radius;
+
+        background-color: $training-graph-button-color;
+      }
+    }
+
+    .stat {
+      @include flex(row, start, 2rem);
+    }
+  }
+}
