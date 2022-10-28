@@ -110,6 +110,7 @@
             ></ion-icon>
           </div>
           <div class="menu-header-btns">
+            <!-- TODO replace for dropdowns -->
             <button class="sort btn">
               <ion-icon
                 name="swap-vertical-outline"
@@ -122,59 +123,6 @@
               Filters
             </button>
           </div>
-        </div>
-      </div>
-      <div class="menu-training-detail">
-        <div class="back-btn-container">
-          <!-- TODO back button -->
-        </div>
-        <div class="detail-header">
-          <h2 contenteditable class="title">Run Near Vinohrady</h2>
-          <!-- TODO make contenteditable and put together with smaller titles-->
-          <!-- TODO add edit icon -->
-          <p class="date-time">08 December 2022 at 10:00</p>
-          <p class="location">In Prague, Czech Republic</p>
-        </div>
-        <div class="stats-container">
-          <h4 class="stats-title">Stats</h4>
-          <div class="stat">
-            <p class="stat-title">Distance</p>
-            <p class="stat-value">5 km</p>
-          </div>
-          <div class="stat">
-            <p class="stat-title">Duration</p>
-            <p class="stat-value">42 min</p>
-          </div>
-          <div class="stat">
-            <p class="stat-title">Pace</p>
-            <p class="stat-value">6:24 min/km</p>
-          </div>
-          <div class="stat">
-            <p class="stat-title">Elevation</p>
-            <p class="stat-value">155 m</p>
-          </div>
-          <div class="stat">
-            <p class="stat-title">Calories</p>
-            <p class="stat-value">166 kcal</p>
-          </div>
-        </div>
-        <div class="graphs-container">
-          <div class="graph-controls">
-            <div class="selection-container">
-              <!-- TODO select component -->
-            </div>
-            <button class="btn graph-btn" data-id="distance">Distance</button>
-            <button class="btn graph-btn" data-id="time">Time</button>
-          </div>
-          <!-- TODO Graph -->
-        </div>
-        <div class="edit-btns">
-          <button class="btn edit-btn" id="edit">
-            <!-- TODO add edit icon -->
-          </button>
-          <button class="btn edit-btn" id="delete">
-            <!-- TODO add delete icon -->
-          </button>
         </div>
       </div>
       <div class="menu-trainings" id="trainings-list">
@@ -294,6 +242,61 @@
           </div>
         </div>
       </div>
+      <div class="menu-training-detail">
+        <div class="btn btn-back">
+          <ion-icon name="arrow-back-outline" class="icon-back"></ion-icon>
+        </div>
+        <div class="detail-header">
+          <div class="detail-header-title">
+            <h2 contenteditable class="title">Run Near Vinohrady</h2>
+            <!-- TODO make contenteditable and put together with smaller titles-->
+            <ion-icon name="pencil-outline" class="training-icon"></ion-icon>
+          </div>
+          <p class="date-time">08 December 2022 at 10:00</p>
+          <p class="location">In Prague, Czech Republic</p>
+        </div>
+        <div class="stats-container">
+          <h4 class="stats-title">Stats</h4>
+          <div class="stat">
+            <p class="stat-title">Distance</p>
+            <p class="stat-value">5 km</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Duration</p>
+            <p class="stat-value">42 min</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Pace</p>
+            <p class="stat-value">6:24 min/km</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Elevation</p>
+            <p class="stat-value">155 m</p>
+          </div>
+          <div class="stat">
+            <p class="stat-title">Calories</p>
+            <p class="stat-value">166 kcal</p>
+          </div>
+        </div>
+        <div class="graphs-container">
+          <div class="graph-controls">
+            <div class="selection-container">
+              <!-- TODO select component -->
+            </div>
+            <button class="btn graph-btn" data-id="distance">Distance</button>
+            <button class="btn graph-btn" data-id="time">Time</button>
+          </div>
+          <!-- TODO Graph -->
+        </div>
+        <div class="edit-btns">
+          <button class="btn edit-btn" id="edit">
+            <!-- TODO add edit icon -->
+          </button>
+          <button class="btn edit-btn" id="delete">
+            <!-- TODO add delete icon -->
+          </button>
+        </div>
+      </div>
     </main>
 
     <!-- Add file popup -->
@@ -326,6 +329,7 @@
       </div>
     </div>
 
+    <!-- Delete popup -->
     <div class="delete-confirmation">
       <h5 class="delete-confirmation-title">
         Are you sure you want to delete the training?
@@ -336,7 +340,7 @@
       </p>
       <div class="delete-confirmation-btn-container">
         <button
-          class="delete-confirmation-btn cancel-btn btn"
+          class="delete-confirmation-btn delete-btn btn"
           id="delete-for-sure"
         >
           Delete
