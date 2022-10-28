@@ -1,3 +1,5 @@
+// TODO rework buttons
+
 .btn {
   border: none;
 
@@ -21,7 +23,7 @@
   transition: transform 300ms ease-in;
 
   &:not(.transitioning):hover {
-    transform: scale(0.95);
+    transform: scale(0.97);
   }
 
   &-icon {
@@ -44,6 +46,7 @@
   }
 }
 
+// TODO make responsive
 #open-upload.move {
   transform: translateX(800%);
 }
