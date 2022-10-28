@@ -11,7 +11,7 @@
 
     padding: 2rem;
 
-    font-size: $text-md;
+    font-size: $text-sm;
 
     &::placeholder {
       color: $main-text-color;
@@ -51,23 +51,27 @@
 
     .search-option {
       color: $main-text-color;
+      font-size: $text-sm;
 
       border-radius: $main-radius;
 
       padding: 1rem;
 
-      @include flex(row, start, 1rem);
+      @include flex(row, flex-start, 1rem);
+      align-items: baseline;
 
       cursor: pointer;
 
       &:not(.disabled):hover {
-        background-color: $light-gray-color;
+        background-color: $highlight-color;
       }
 
       &-text-country {
-        color: $extra-light-text-color;
-        font-size: $text-sm;
+        color: $light-text-color;
+        font-size: $text-xs;
       }
     }
   }
 }
+
+// TODO add box shadow to results container

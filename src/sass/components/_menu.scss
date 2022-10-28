@@ -4,7 +4,7 @@
   left: 0;
   transform: translateY(-50%) translateX(-100%);
 
-  background: linear-gradient(180deg, #ffffff 0%, #e1e5e6 40.1%);
+  background: $main-menu-gradient;
 
   border-top-right-radius: $main-radius;
   border-bottom-right-radius: $main-radius;
@@ -26,6 +26,8 @@
     position: absolute;
     top: 2%;
     right: 4%;
+
+    z-index: 100;
   }
 
   &-header {
@@ -35,7 +37,7 @@
 
     &-title {
       font-weight: $bold-weight;
-      font-size: $text-xxl;
+      font-size: $text-xxxl;
 
       margin-bottom: 2.5rem;
     }
@@ -55,15 +57,15 @@
         padding: 2rem 1rem 2rem 4rem;
 
         color: inherit;
-        font-size: $text-sm;
+        font-size: $text-xs;
       }
 
       .btn-icon {
-        left: 25%;
+        left: 30%;
 
         color: inherit;
 
-        width: 2rem;
+        width: $text-sm;
       }
     }
 
@@ -72,11 +74,12 @@
         width: $long-button-size-width;
         height: 4rem;
 
-        font-size: $text-sm;
+        font-size: $text-xs;
       }
 
       .search-icon {
-        width: 2rem;
+        width: $text-sm;
+        right: 6%;
       }
     }
   }

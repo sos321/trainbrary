@@ -1,16 +1,11 @@
 // *** Colors ***
 // Text Colors
 $main-text-color: #2c3e50;
-$light-text-color: #bdc3c7;
-$extra-light-text-color: #95a5a6;
-
-$light-gray-color: #ecf0f1;
+$highlight-color: #ecf0f1;
+$light-text-color: #95a5a6;
 
 $success-text-color: #27ae60;
 $fail-text-color: #e74c3c;
-
-// Highlight Colors
-$highlight-color: #ecf0f1;
 
 // Training Colors
 $run-color: #f39c12;
@@ -20,8 +15,10 @@ $swim-color: #9b59b6;
 $other-color: #2c3e50;
 
 // Button Colors
-$training-graph-button-color: #ffffff2b;
-$button-background-color: #fff;
+$training-graph-button-color: rgba(255, 255, 255, 0.5);
+$button-background-color: #ffffff;
+$button-highlight-background-color: #bdc3c7;
+$button-highlight-background-color-highlight: #b6bcc0;
 
 // Gradients
 $main-menu-gradient: linear-gradient(180deg, #ffffff 0%, #ecf0f1 40%);
@@ -37,14 +34,17 @@ $main-shadow: 4px 4px 7px 1px rgba(0, 0, 0, 0.2);
 // *** Fonts ***
 // Weights
 $normal-weight: 400;
+$semi-bold-weight: 600;
 $bold-weight: 700;
 
 // Sizes
-$text-xxl: 4rem;
-$text-xl: 2.6rem;
+$text-xxxl: 3.5rem;
+$text-xxl: 2.8rem;
+$text-xl: 2.4rem;
 $text-lg: 2rem;
-$text-md: 1.7rem;
-$text-sm: 1.4rem;
+$text-md: 1.8rem;
+$text-sm: 1.6rem;
+$text-xs: 1.35rem;
 
 // *** Other ***
 // Border Radius
@@ -52,6 +52,7 @@ $main-radius: 11px;
 $status-radius: 22px;
 
 // Widths
+// TODO Redo widths
 $small-button-size-width: 4.6rem;
 $standard-button-size-width: 6rem;
 $long-button-size-width: 21rem;
@@ -59,15 +60,3 @@ $manipulation-button-size-width: 15rem;
 
 $popup-size-width: 59rem;
 $status-size-width: 28rem;
-
-// Breakpoints
-$breakpoints: (
-  'phone': 400px,
-  'phone-wide': 480px,
-  'phablet': 560px,
-  'tablet-small': 640px,
-  'tablet': 768px,
-  'tablet-wide': 1024px,
-  'desktop': 1248px,
-  'desktop-wide': 1440px,
-);

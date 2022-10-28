@@ -12,7 +12,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: $light-gray-color;
+    background: $highlight-color;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -20,7 +20,7 @@
     border-radius: $main-radius;
 
     &:hover {
-      background: $extra-light-text-color;
+      background: $light-text-color;
     }
   }
 }
@@ -93,6 +93,10 @@
         @include flex(row, center, 2rem);
 
         .name {
+          font-size: $text-xs;
+        }
+
+        .value {
           font-size: $text-sm;
         }
       }
@@ -111,7 +115,7 @@
       @include flex(column, center, 0.8rem);
       align-items: flex-end;
 
-      font-size: $text-sm;
+      font-size: $text-xs;
     }
   }
 }
