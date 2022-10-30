@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import _ from 'leaflet-gpx';
 import map from './map';
 import searchPlaceHandler from './placeSearch';
 

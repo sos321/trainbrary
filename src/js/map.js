@@ -1,6 +1,7 @@
 import * as L from 'leaflet';
 import AJAX from './helpers';
 import { API_IP_GEO, INITIAL_ZOOM } from './config';
+import cycleSvg from '../img/icon-cycle.svg';
 
 // Check if map already exists
 const container = L.DomUtil.get('map');
@@ -51,6 +52,42 @@ function zoomOut() {
 function setZoom(zoom) {
   map.setZoom(zoom, { animate: true, duration: 300 });
 }
+
+const fileInput = document.getElementById('file');
+fileInput.addEventListener('change', () => {
+  const selectedFile = fileInput.files[0];
+
+  const reader = new FileReader();
+
+  reader.readAsText(selectedFile);
+
+  const cycleIcon = L.icon({
+    iconUrl: cycleSvg,
+    iconSize: [150, 80],
+    iconAnchor: [-20, -27],
+  });
+
+  reader.onload = () => {
+    const gpx = reader.result;
+
+    const track = new L.GPX(gpx, {
+      async: true,
+      polyline_options: {
+        color: '#1abc9c',
+        weight: 3,
+        lineCap: 'round',
+      },
+      marker_options: {
+        endIcon: {
+          icon: null,
+        },
+        startIconUrl: cycleSvg,
+      },
+    });
+    track.addTo(map);
+  };
+  // TODO add error handling
+});
 
 const mapAPI = {
   init: initMapView,
