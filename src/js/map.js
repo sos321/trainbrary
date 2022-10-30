@@ -2,6 +2,12 @@ import * as L from 'leaflet';
 import AJAX from './helpers';
 import { API_IP_GEO, INITIAL_ZOOM } from './config';
 
+// Check if map already exists
+const container = L.DomUtil.get('map');
+if (container != null) {
+  container._leaflet_id = null;
+}
+
 let initialPosition = [51.5, -0.11];
 const map = L.map('map', { zoomControl: false });
 
