@@ -1,5 +1,10 @@
 // TODO finish training detail
+
 .menu-training-detail {
+  // TODO remove opacity and visibility classes
+  opacity: 0;
+  visibility: hidden;
+
   position: absolute;
   top: 7%;
   left: 5%;

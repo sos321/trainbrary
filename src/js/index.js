@@ -1,3 +1,4 @@
+import * as L from 'leaflet';
 import map from './map';
 import searchPlaceHandler from './placeSearch';
 
@@ -28,6 +29,8 @@ function closeMenu() {
 
 btnMenuClose.addEventListener('click', closeMenu);
 
+// TODO future feature with editing names
+/*
 // * ContentEditable focus
 const trainingsList = document.getElementById('trainings-list');
 
@@ -59,8 +62,9 @@ trainingsList.addEventListener('focusin', (e) => {
 trainingsList.addEventListener('focusout', (e) => {
   console.log(e.target.textContent);
 });
+*/
 
-// * Upload files
+// * Upload files open modal
 const btnUploadClose = document.getElementById('close-upload');
 const upload = document.getElementById('add-file');
 
