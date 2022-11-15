@@ -1,34 +1,33 @@
-import * as L from 'leaflet';
+// Make leaflet-gpx available
 import _ from 'leaflet-gpx';
+
+import * as Elements from './selector';
+import { openAddFile, closeAddFile, addFileHandler } from './view/addFileView';
+import { openMenu, closeMenu } from './view/menuView';
 import map from './map';
-import searchPlaceHandler from './placeSearch';
 
 map.init();
 
-// * Closing and opening menu
-const btnMenuOpen = document.getElementById('open-menu');
-const btnMenuClose = document.getElementById('close-menu');
-const menu = document.getElementById('menu');
-const uploadBtn = document.getElementById('open-upload');
+// Add zoom levels and current position habdlers
+Elements.posBtn.addEventListener('click', map.setInitialPos);
+Elements.zoomInBtn.addEventListener('click', map.zoomIn);
+Elements.zoomOutBtn.addEventListener('click', map.zoomOut);
 
-btnMenuOpen.addEventListener('click', () => {
-  if (menu.classList.contains('active')) return;
+// Handling adding files
+Elements.uploadBtnOpen.addEventListener('click', () => {
+  closeMenu();
+  openAddFile();
+});
+Elements.UploadBtnClose.addEventListener('click', closeAddFile);
 
-  menu.classList.add('active');
-  uploadBtn.classList.add('move');
+addFileHandler('change', {
+  // TODO Create the workout object
+  // TODO Render the training list
 });
 
-function closeMenu() {
-  if (!menu.classList.contains('active')) return;
-
-  menu.classList.remove('active');
-  uploadBtn.classList.remove('move');
-  uploadBtn.classList.add('transitioning');
-
-  setTimeout(() => uploadBtn.classList.remove('transitioning'), 300);
-}
-
-btnMenuClose.addEventListener('click', closeMenu);
+// Handling menu
+Elements.btnMenuClose.addEventListener('click', closeMenu);
+Elements.btnMenuOpen.addEventListener('click', openMenu);
 
 // TODO future feature with editing names
 /*
@@ -64,33 +63,3 @@ trainingsList.addEventListener('focusout', (e) => {
   console.log(e.target.textContent);
 });
 */
-
-// * Upload files open modal
-const btnUploadClose = document.getElementById('close-upload');
-const upload = document.getElementById('add-file');
-
-uploadBtn.addEventListener('click', () => {
-  closeMenu();
-  upload.classList.add('active');
-});
-
-btnUploadClose.addEventListener('click', () => {
-  upload.classList.remove('active');
-});
-
-// Close when user clicks outside
-upload.addEventListener('click', (e) => {
-  if (!e.target.closest('.add-file-content')) upload.classList.remove('active');
-});
-
-// Add zoom levels and current position habdlers
-const posBtn = document.getElementById('initial-pos');
-const zoomInBtn = document.getElementById('zoom-in');
-const zoomOutBtn = document.getElementById('zoom-out');
-
-posBtn.addEventListener('click', map.setInitialPos);
-zoomInBtn.addEventListener('click', map.zoomIn);
-zoomOutBtn.addEventListener('click', map.zoomOut);
-
-const searchPlace = document.getElementById('search-place');
-searchPlace.addEventListener('input', searchPlaceHandler);

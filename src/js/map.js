@@ -4,10 +4,12 @@ import { API_IP_GEO, INITIAL_ZOOM } from './config';
 import cycleSvg from '../img/icon-cycle.svg';
 
 // Check if map already exists
+/* eslint-disable */
 const container = L.DomUtil.get('map');
 if (container != null) {
   container._leaflet_id = null;
 }
+/* eslint-enable */
 
 let initialPosition = [51.5, -0.11];
 const map = L.map('map', { zoomControl: false });
@@ -53,6 +55,11 @@ function setZoom(zoom) {
   map.setZoom(zoom, { animate: true, duration: 300 });
 }
 
+function addToMapCenter(layer) {
+  map.fitBounds(layer.getBounds());
+  layer.addTo(map);
+}
+
 const fileInput = document.getElementById('file');
 fileInput.addEventListener('change', () => {
   const selectedFile = fileInput.files[0];
@@ -63,39 +70,55 @@ fileInput.addEventListener('change', () => {
 
   const cycleIcon = L.icon({
     iconUrl: cycleSvg,
-    iconSize: [150, 80],
-    iconAnchor: [-20, -27],
+    iconSize: [94, 50],
+    iconAnchor: [47, 25],
   });
 
   reader.onload = () => {
     const gpx = reader.result;
 
-    const track = new L.GPX(gpx, {
-      async: true,
-      polyline_options: {
-        color: '#1abc9c',
-        weight: 3,
-        lineCap: 'round',
-      },
-      marker_options: {
-        endIcon: {
-          icon: null,
+    try {
+      const track = new L.GPX(gpx, {
+        async: true,
+        polyline_options: {
+          color: '#1abc9c',
+          weight: 3,
+          lineCap: 'round',
         },
-        startIconUrl: cycleSvg,
-      },
-    });
-    track.addTo(map);
+        marker_options: {
+          endIcon: {
+            icon: null,
+          },
+          startIcon: cycleIcon,
+        },
+      });
+
+      track.on('loaded', () => console.log('Success'));
+
+      track.addTo(map);
+    } catch (err) {
+      console.log('Failed!');
+    }
+
+    // * How it works
+    // const detail = document.querySelector('.training');
+    // detail.addEventListener('click', () => {
+    //   map.fitBounds(track.getBounds());
+    //   track.addTo(map);
+    // });
   };
-  // TODO add error handling
 });
+
+// TODO Extract into own module
 
 const mapAPI = {
   init: initMapView,
   setInitialPos: setInitialPosition,
   moveTo: setPosition,
-  zoomTO: setZoom,
+  zoomTo: setZoom,
   zoomIn,
   zoomOut,
+  center: addToMapCenter,
 };
 
 export default mapAPI;
