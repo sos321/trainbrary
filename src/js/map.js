@@ -1,7 +1,6 @@
 import * as L from 'leaflet';
 import AJAX from './helpers';
 import { API_IP_GEO, INITIAL_ZOOM } from './config';
-import cycleSvg from '../img/icon-cycle.svg';
 
 // Check if map already exists
 /* eslint-disable */
@@ -59,57 +58,6 @@ function addToMapCenter(layer) {
   map.fitBounds(layer.getBounds());
   layer.addTo(map);
 }
-
-const fileInput = document.getElementById('file');
-fileInput.addEventListener('change', () => {
-  const selectedFile = fileInput.files[0];
-
-  const reader = new FileReader();
-
-  reader.readAsText(selectedFile);
-
-  const cycleIcon = L.icon({
-    iconUrl: cycleSvg,
-    iconSize: [94, 50],
-    iconAnchor: [47, 25],
-  });
-
-  reader.onload = () => {
-    const gpx = reader.result;
-
-    try {
-      const track = new L.GPX(gpx, {
-        async: true,
-        polyline_options: {
-          color: '#1abc9c',
-          weight: 3,
-          lineCap: 'round',
-        },
-        marker_options: {
-          endIcon: {
-            icon: null,
-          },
-          startIcon: cycleIcon,
-        },
-      });
-
-      track.on('loaded', () => console.log('Success'));
-
-      track.addTo(map);
-    } catch (err) {
-      console.log('Failed!');
-    }
-
-    // * How it works
-    // const detail = document.querySelector('.training');
-    // detail.addEventListener('click', () => {
-    //   map.fitBounds(track.getBounds());
-    //   track.addTo(map);
-    // });
-  };
-});
-
-// TODO Extract into own module
 
 const mapAPI = {
   init: initMapView,

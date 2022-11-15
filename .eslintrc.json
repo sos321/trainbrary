@@ -19,6 +19,7 @@
     "func-style": ["error", "declaration"],
     "no-var": "error",
     "comma-dangle": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "max-classes-per-file": "off"
   }
 }
