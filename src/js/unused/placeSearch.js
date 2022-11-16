@@ -1,5 +1,5 @@
-import { A_API, TIMEOUT_SEC } from './config';
-import AJAX from './helpers';
+import { A_API, TIMEOUT_SEC } from '../config';
+import AJAX from '../helpers';
 
 // TODO create search place logic
 
