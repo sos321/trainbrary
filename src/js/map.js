@@ -54,8 +54,7 @@ function setZoom(zoom) {
   map.setZoom(zoom, { animate: true, duration: 300 });
 }
 
-function addToMapCenter(layer) {
-  map.fitBounds(layer.getBounds());
+function addToMap(layer) {
   layer.addTo(map);
 }
 
@@ -66,7 +65,7 @@ const mapAPI = {
   zoomTo: setZoom,
   zoomIn,
   zoomOut,
-  center: addToMapCenter,
+  add: addToMap,
 };
 
 export default mapAPI;

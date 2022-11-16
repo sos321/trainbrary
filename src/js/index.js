@@ -2,9 +2,10 @@
 import _ from 'leaflet-gpx';
 
 import * as Elements from './selector';
-import { openAddFile, closeAddFile, addFileHandler } from './view/addFileView';
+import { openAddFile, closeAddFile } from './view/addFileView';
 import { openMenu, closeMenu } from './view/menuView';
 import map from './map';
+import loadGPX from './trainingBuilder';
 
 map.init();
 
@@ -20,9 +21,10 @@ Elements.uploadBtnOpen.addEventListener('click', () => {
 });
 Elements.UploadBtnClose.addEventListener('click', closeAddFile);
 
-addFileHandler('change', {
-  // TODO Create the workout object
+Elements.fileInput.addEventListener('change', (e) => {
+  loadGPX(e.target);
   // TODO Render the training list
+  closeAddFile();
 });
 
 // Handling menu
