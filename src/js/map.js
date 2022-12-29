@@ -1,6 +1,5 @@
 import * as L from 'leaflet';
-import AJAX from './helpers';
-import { API_IP_GEO, INITIAL_ZOOM } from './config';
+import { INITIAL_ZOOM } from './config';
 
 // Check if map already exists
 /* eslint-disable */
@@ -10,33 +9,28 @@ if (container != null) {
 }
 /* eslint-enable */
 
-let initialPosition = [51.5, -0.11];
 const map = L.map('map', { zoomControl: false });
 
-async function getInitialPosition() {
-  const data = await AJAX(API_IP_GEO);
+function setUserView() {
+  const defaultPos = [52, 0];
 
-  initialPosition = [data.lat, data.lon];
-}
-
-async function initMapView() {
-  try {
-    await getInitialPosition();
-  } catch (err) {
-    initialPosition = [51.5, -0.11];
-  } finally {
-    map.setView(initialPosition, INITIAL_ZOOM);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/hot//{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        map.setView([pos.coords.latitude, pos.coords.longitude], INITIAL_ZOOM);
+      },
+      () => map.setView(defaultPos, INITIAL_ZOOM)
+    );
+  } else {
+    map.setView(defaultPos, INITIAL_ZOOM);
   }
 }
+setUserView();
 
-function setInitialPosition() {
-  map.setView(initialPosition, INITIAL_ZOOM, { animate: true, duration: 600 });
-}
+L.tileLayer('https://{s}.tile.openstreetmap.fr/hot//{z}/{x}/{y}.png', {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
 
 function setPosition(coords, zoom = map.getZoom()) {
   map.setView(coords, zoom, { animate: true, duration: 600 });
@@ -59,8 +53,7 @@ function addToMap(layer) {
 }
 
 const mapAPI = {
-  init: initMapView,
-  setInitialPos: setInitialPosition,
+  userPos: setUserView,
   moveTo: setPosition,
   zoomTo: setZoom,
   zoomIn,

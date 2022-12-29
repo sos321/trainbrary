@@ -7,10 +7,8 @@ import { openMenu, closeMenu } from './view/menuView';
 import map from './map';
 import loadGPX from './trainingBuilder';
 
-map.init();
-
 // Add zoom levels and current position habdlers
-Elements.posBtn.addEventListener('click', map.setInitialPos);
+Elements.posBtn.addEventListener('click', map.userPos);
 Elements.zoomInBtn.addEventListener('click', map.zoomIn);
 Elements.zoomOutBtn.addEventListener('click', map.zoomOut);
 
