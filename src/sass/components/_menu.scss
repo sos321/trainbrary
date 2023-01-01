@@ -33,11 +33,11 @@
   &-header {
     margin: 0 4rem;
 
-    color: $main-text-color;
+    color: $primary-color;
 
     &-title {
       font-weight: $bold-weight;
-      font-size: $text-xxxl;
+      font-size: $heading-2;
 
       margin-bottom: 2.5rem;
     }
@@ -49,23 +49,31 @@
     &-btns {
       @include flex(row, center, 2rem);
 
+      // TODO Redo
       .sort,
       .filter {
         height: 4rem;
         width: 100%;
 
-        padding: 2rem 1rem 2rem 4rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        padding: 2rem 1rem;
 
         color: inherit;
-        font-size: $text-xs;
+        font-size: $t-s;
       }
 
       .btn-icon {
-        left: 30%;
+        display: inline;
+        position: relative;
 
         color: inherit;
 
-        width: $text-sm;
+        width: $t-m;
       }
     }
 

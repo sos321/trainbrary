@@ -1,18 +1,26 @@
 // *** Colors ***
-// Text Colors
+// Brand Colors
+$primary-color: #2c3e50;
+
+// Sate Colors
+$success-color: #34b36a;
+$fail-color: #ea6254;
+$warning-color: #eadb54;
+
+// Training Colors
+$run-color: #f39c12;
+$walk-color: #e77a3c;
+$cycle-color: #1abc9c;
+$swim-color: #9b59b6;
+$other-color: #75bc1a;
+
+// TODO fix color naming
 $main-text-color: #2c3e50;
 $highlight-color: #ecf0f1;
 $light-text-color: #95a5a6;
 
 $success-text-color: #27ae60;
 $fail-text-color: #e74c3c;
-
-// Training Colors
-$run-color: #f39c12;
-$walk-color: #e74c3c;
-$cycle-color: #1abc9c;
-$swim-color: #9b59b6;
-$other-color: #2c3e50;
 
 // Button Colors
 $training-graph-button-color: rgba(255, 255, 255, 0.5);
@@ -29,15 +37,26 @@ $swim-menu-gradient: linear-gradient(180deg, #9b59b6 0%, #8e44ad 100%);
 $other-menu-gradient: linear-gradient(180deg, #34495e80 0%, #2c3e5080 100%);
 
 // Box Shadows
-$main-shadow: 4px 4px 7px 1px rgba(0, 0, 0, 0.2);
+$main-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 
 // *** Fonts ***
 // Weights
 $normal-weight: 400;
-$semi-bold-weight: 600;
 $bold-weight: 700;
 
 // Sizes
+$heading-1: 4.8rem;
+$heading-2: 4rem;
+$heading-3: 3.2rem;
+$heading-4: 2.4rem;
+$heading-5: 2rem;
+
+$t-xl: 2rem;
+$t-l: 1.8rem;
+$t-m: 1.6rem;
+$t-s: 1.4rem;
+
+// TODO fix font size naming
 $text-xxxl: 3.5rem;
 $text-xxl: 2.8rem;
 $text-xl: 2.4rem;
@@ -49,7 +68,6 @@ $text-xs: 1.35rem;
 // *** Other ***
 // Border Radius
 $main-radius: 11px;
-$status-radius: 22px;
 
 // Widths
 // TODO Redo widths
@@ -60,3 +78,5 @@ $manipulation-button-size-width: 15rem;
 
 $popup-size-width: 59rem;
 $status-size-width: 28rem;
+
+$icon-button: 6rem;

@@ -13,40 +13,30 @@
 
   border-radius: $main-radius;
 
-  padding: 1rem 2.5rem;
-
-  width: $standard-button-size-width;
-  height: $standard-button-size-width;
-
   cursor: pointer;
 
   transition: transform 300ms ease-in;
 
-  &:not(.transitioning):hover {
+  &:hover {
     transform: scale(0.97);
   }
 
   &-icon {
     @include center;
 
-    color: $main-text-color;
+    color: $primary-color;
 
     width: 2.5rem;
     height: 2.5rem;
   }
 
   &-text {
-    font-size: $text-md;
+    font-size: $t-m;
   }
 
   &-small {
     @extend .btn;
-    max-width: $small-button-size-width;
-    max-height: $small-button-size-width;
+    width: $icon-button !important;
+    height: $icon-button !important;
   }
-}
-
-// TODO make responsive
-#open-upload.move {
-  transform: translateX(800%);
 }
