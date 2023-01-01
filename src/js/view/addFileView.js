@@ -1,4 +1,4 @@
-import { upload, fileInput } from '../selector';
+import { upload } from '../selector';
 
 export function closeAddFile() {
   upload.classList.remove('active');
