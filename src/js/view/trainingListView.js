@@ -21,6 +21,7 @@ export default function updateTrainings() {
     el.classList.add('training');
     el.dataset.id = workout.id;
 
+    /* eslint indent: "off" */
     el.innerHTML = `
     <div class="training-side-color-panel"></div>
     <div class="training-content">

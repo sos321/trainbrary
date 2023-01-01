@@ -1,5 +1,5 @@
 import * as L from 'leaflet';
-import { Running, Walking, Cycling, Swimming, Other } from './training';
+import { Running, Walking, Cycling, Swimming, Other } from './training'; // eslint-disable-line
 import map from './map';
 import { workouts } from './state';
 import updateTrainings from './view/trainingListView';
