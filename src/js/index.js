@@ -13,15 +13,11 @@ Elements.zoomInBtn.addEventListener('click', map.zoomIn);
 Elements.zoomOutBtn.addEventListener('click', map.zoomOut);
 
 // Handling adding files
-Elements.uploadBtnOpen.addEventListener('click', () => {
-  closeMenu();
-  openAddFile();
-});
+Elements.uploadBtnOpen.addEventListener('click', openAddFile);
 Elements.UploadBtnClose.addEventListener('click', closeAddFile);
 
 Elements.fileInput.addEventListener('change', (e) => {
   loadGPX(e.target);
-  // TODO Render the training list
   closeAddFile();
 });
 

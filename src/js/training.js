@@ -1,10 +1,17 @@
 class Training {
-  constructor(gpxData, track) {
+  constructor(gpxData, track, id) {
     this.name = gpxData.get_name();
-    this.startTime = gpxData.get_start_time();
-    this.id = gpxData.get_start_time().getTime().toString().slice(-10);
-    this.distance = gpxData.get_distance();
-    this.duration = gpxData.get_total_time();
+    this.startTime =
+      gpxData.get_start_time().getTime() ===
+      new Date('1970-01-01T00:00:00').getTime()
+        ? new Date()
+        : gpxData.get_start_time();
+    this.id = id;
+    this.distance = Math.round(gpxData.get_distance()) / 1000;
+    this.duration = gpxData.get_duration_string_iso(
+      gpxData.get_total_time(),
+      true
+    );
     this.speed = gpxData.get_moving_speed();
     this.elevation = gpxData.get_elevation_gain();
     // TODO Calories in each class
